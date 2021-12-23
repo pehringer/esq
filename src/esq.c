@@ -1,4 +1,4 @@
-#include"esq.h"
+#include "esq.h"
 
 void esq_SingleFontEffect (enum esq_FontEffect first)
 {
@@ -31,4 +31,39 @@ void esq_FontColors (unsigned int foreRed, unsigned int foreGreen, unsigned int 
 {
   printf ("\033[38;2;%d;%d;%d;48;2;%d;%d;%dm", foreRed % 256, foreGreen % 256,
           foreBlue % 256, backRed % 256, backGreen % 256, backBlue % 256);
+}
+
+void esq_CursorUp (unsigned int lines)
+{
+  printf ("\033[%dA", lines);
+}
+
+void esq_CursorDown (unsigned int lines)
+{
+  printf ("\033[%dB", lines);
+}
+
+void esq_CursorRight (unsigned int columns)
+{
+  printf ("\033[%dC", columns);
+}
+
+void esq_CursorLeft (unsigned int columns)
+{
+  printf ("\033[%dD", columns);
+}
+
+void esq_CursorColumn (unsigned int column)
+{
+  printf ("\033[%dG", column);
+}
+
+void esq_CursorHome (void)
+{
+  printf ("\033[H");
+}
+
+void esq_CursorLineColumn (unsigned int line, unsigned int column)
+{
+  printf ("\033[%d;%dH", line, column);
 }

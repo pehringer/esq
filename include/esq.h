@@ -1,7 +1,7 @@
 #ifndef ESQ_H
 #define ESQ_H
 
-#include<stdio.h>
+#include <stdio.h>
 
 // ANSI escape sequence notes:
 // Starts with either octal: '\033', hexadecimal: '\x1B'.
@@ -61,21 +61,49 @@ void esq_DoubleFontEffect (enum esq_FontEffect first, enum esq_FontEffect second
 // Format: \033[<CODE>;<CODE>;<CODE>m
 void esq_TripleFontEffect (enum esq_FontEffect first, enum esq_FontEffect second,
                                                       enum esq_FontEffect third);
-// Applies given RGB color to foreground of font.
+// Applies given RGB values to foreground of font.
 // Format: \033[38;2;<RED>;<GREEN>;<BLUE>m
 // Note: code 38: font foreground color. followed by code 2: RGB arguments.
 void esq_FontForegroundColor (unsigned int red, unsigned int green, unsigned int blue);
 
-// Applies given RGB color to background of font.
+// Applies given RGB values to background of font.
 // Format: \033[48;2;<RED>;<GREEN>;<BLUE>m
 // Note: code 48: font background color. followed by code 2: RGB arguments.
 void esq_FontBackgroundColor (unsigned int red, unsigned int green, unsigned int blue);
 
-// Applies given RGB colors to foreground and background of font respectively.
+// Applies given RGB values to foreground and background of font respectively.
 // Format: \033[38;2;<RED>;<GREEN>;<BLUE>;48;2;<RED>;<GREEN>;<BLUE>m
 // Note: code 38: font foreground color. followed by code 2: RGB arguments.
 // Note: code 48: font background color. followed by code 2: RGB arguments.
 void esq_FontColors (unsigned int foreRed, unsigned int foreGreen, unsigned int foreBlue,
                      unsigned int backRed, unsigned int backGreen, unsigned int backBlue);
+
+// Moves cursor position up by given number of lines.
+// Format: \033[<LINES>A
+void esq_CursorUp (unsigned int lines);
+
+// Moves cursor position down by given number of lines.
+// Format: \033[<LINES>B
+void esq_CursorDown (unsigned int lines);
+
+// Moves cursor position right by given number of columns.
+// Format: \033[<COLUMNS>C
+void esq_CursorRight (unsigned int columns);
+
+// Moves cursor position left by given number of columns.
+// Format: \033[<COLUMNS>D
+void esq_CursorLeft (unsigned int columns);
+
+// Sets cursor column position to given column.
+// Format: \033[<COLUMN>G
+void esq_CursorColumn (unsigned int column);
+
+// Moves cursor position to upper left corner (line 0 / column 0).
+// Format: \033[H
+void esq_CursorHome (void);
+
+// Sets cursor line and column position to given line and column.
+// Format: \033[<LINE>;<COLUMN>H
+void esq_CursorLineColumn (unsigned int line, unsigned int column);
 
 #endif
