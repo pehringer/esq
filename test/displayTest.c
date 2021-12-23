@@ -2,112 +2,159 @@
 
 int main (void)
 {
-  printf ("Font effects test:\n");
-
   // Row 0.
   esq_SingleFontEffect (esq_blink);
-  printf ("#### Blink ############################################\n");
+  printf ("######## Font Effects Test Below ########\n");
   esq_SingleFontEffect (esq_removeEffects);
   // Row 1.
-  esq_TripleFontEffect (esq_italic, esq_underline, esq_foreDarkBlack);
-  esq_SingleFontEffect (esq_backLightBlack);
-  printf(" Light Black ");
-  esq_SingleFontEffect (esq_backLightRed);
-  printf(" Light Red     ");
-  esq_SingleFontEffect (esq_backLightGreen);
-  printf(" Light Green ");
-  esq_SingleFontEffect (esq_backLightYellow);
-  printf(" Light Yellow ");
+  esq_TripleFontEffect (esq_italic, esq_underline, esq_foreBlack);
+  esq_SingleFontEffect (esq_backBrightBlack);
+  printf(" Bright Black ");
+  esq_SingleFontEffect (esq_backBrightRed);
+  printf(" Bright Red     ");
+  esq_SingleFontEffect (esq_backBrightGreen);
+  printf(" Bright Green ");
+  esq_SingleFontEffect (esq_backBrightYellow);
+  printf(" Bright Yellow ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 2.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_backDarkBlack);
-  printf(" Dark Black  ");
-  esq_SingleFontEffect (esq_backDarkRed);
-  printf(" Dark Red      ");
-  esq_SingleFontEffect (esq_backDarkGreen);
-  printf(" Dark Green  ");
-  esq_SingleFontEffect (esq_backDarkYellow);
-  printf(" Dark Yellow  ");
+  esq_SingleFontEffect (esq_backBlack);
+  printf(" Black        ");
+  esq_SingleFontEffect (esq_backRed);
+  printf(" Red            ");
+  esq_SingleFontEffect (esq_backGreen);
+  printf(" Green        ");
+  esq_SingleFontEffect (esq_backYellow);
+  printf(" Yellow        ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 3.
-  esq_TripleFontEffect (esq_italic, esq_underline, esq_foreDarkBlack);
-  esq_SingleFontEffect (esq_backLightBlue);
-  printf(" Light Blue  ");
-  esq_SingleFontEffect (esq_backLightMagenta);
-  printf(" Light Magenta ");
-  esq_SingleFontEffect (esq_backLightCyan);
-  printf(" Light Cyan  ");
-  esq_SingleFontEffect (esq_backLightWhite);
-  printf(" Light White  ");
+  esq_TripleFontEffect (esq_italic, esq_underline, esq_foreBlack);
+  esq_SingleFontEffect (esq_backBrightBlue);
+  printf(" Bright Blue  ");
+  esq_SingleFontEffect (esq_backBrightMagenta);
+  printf(" Bright Magenta ");
+  esq_SingleFontEffect (esq_backBrightCyan);
+  printf(" Bright Cyan  ");
+  esq_SingleFontEffect (esq_backBrightWhite);
+  printf(" Bright White  ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 4.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_backDarkBlue);
-  printf(" Dark Blue   ");
-  esq_SingleFontEffect (esq_backDarkMagenta);
-  printf(" Dark Magenta  ");
-  esq_SingleFontEffect (esq_backDarkCyan);
-  printf(" Dark Cyan   ");
-  esq_DoubleFontEffect (esq_backDarkWhite, esq_foreDarkBlack);
-  printf(" Dark White   ");
+  esq_SingleFontEffect (esq_backBlue);
+  printf(" Blue         ");
+  esq_SingleFontEffect (esq_backMagenta);
+  printf(" Magenta        ");
+  esq_SingleFontEffect (esq_backCyan);
+  printf(" Cyan         ");
+  esq_DoubleFontEffect (esq_backWhite, esq_foreBlack);
+  printf(" White         ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 5.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_foreLightBlack);
-  printf(" Light Black ");
-  esq_SingleFontEffect (esq_foreLightRed);
-  printf(" Light Red     ");
-  esq_SingleFontEffect (esq_foreLightGreen);
-  printf(" Light Green ");
-  esq_SingleFontEffect (esq_foreLightYellow);
-  printf(" Light Yellow ");
+  esq_SingleFontEffect (esq_foreBrightBlack);
+  printf(" Bright Black ");
+  esq_SingleFontEffect (esq_foreBrightRed);
+  printf(" Bright Red     ");
+  esq_SingleFontEffect (esq_foreBrightGreen);
+  printf(" Bright Green ");
+  esq_SingleFontEffect (esq_foreBrightYellow);
+  printf(" Bright Yellow ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 6.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_DoubleFontEffect (esq_foreDarkBlack, esq_backLightBlack);
-  printf(" Dark Black  ");
+  esq_DoubleFontEffect (esq_foreBlack, esq_backBrightBlack);
+  printf(" Black        ");
   esq_SingleFontEffect (esq_removeEffects);
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_foreDarkRed);
-  printf(" Dark Red      ");
-  esq_SingleFontEffect (esq_foreDarkGreen);
-  printf(" Dark Green  ");
-  esq_SingleFontEffect (esq_foreDarkYellow);
-  printf(" Dark Yellow  ");
+  esq_SingleFontEffect (esq_foreRed);
+  printf(" Red            ");
+  esq_SingleFontEffect (esq_foreGreen);
+  printf(" Green        ");
+  esq_SingleFontEffect (esq_foreYellow);
+  printf(" Yellow        ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 7.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_foreLightBlue);
-  printf(" Light Blue  ");
-  esq_SingleFontEffect (esq_foreLightMagenta);
-  printf(" Light Magenta ");
-  esq_SingleFontEffect (esq_foreLightCyan);
-  printf(" Light Cyan  ");
-  esq_SingleFontEffect (esq_foreLightWhite);
-  printf(" Light White  ");
+  esq_SingleFontEffect (esq_foreBrightBlue);
+  printf(" Bright Blue  ");
+  esq_SingleFontEffect (esq_foreBrightMagenta);
+  printf(" Bright Magenta ");
+  esq_SingleFontEffect (esq_foreBrightCyan);
+  printf(" Bright Cyan  ");
+  esq_SingleFontEffect (esq_foreBrightWhite);
+  printf(" Bright White  ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 8.
   esq_DoubleFontEffect (esq_italic, esq_underline);
-  esq_SingleFontEffect (esq_foreDarkBlue);
-  printf(" Dark Blue   ");
-  esq_SingleFontEffect (esq_foreDarkMagenta);
-  printf(" Dark Magenta  ");
-  esq_SingleFontEffect (esq_foreDarkCyan);
-  printf(" Dark Cyan   ");
-  esq_SingleFontEffect (esq_foreDarkWhite);
-  printf(" Dark White   ");
+  esq_SingleFontEffect (esq_foreBlue);
+  printf(" Blue         ");
+  esq_SingleFontEffect (esq_foreMagenta);
+  printf(" Magenta        ");
+  esq_SingleFontEffect (esq_foreCyan);
+  printf(" Cyan         ");
+  esq_SingleFontEffect (esq_foreWhite);
+  printf(" White         ");
   esq_SingleFontEffect (esq_removeEffects);
   printf("\n");
   // Row 9.
   esq_SingleFontEffect (esq_blink);
-  printf ("#### Blink ############################################\n");
+  printf("######## Font RGB Colors Test Below ########\n");
   esq_SingleFontEffect (esq_removeEffects);
+  // Row 10.
+  int value;
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontBackgroundColor (value, 0, 0);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
+  // Row 11.
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontBackgroundColor (0, value, 0);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
+  // Row 12.
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontBackgroundColor (0, 0, value);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
+  // Row 13.
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontForegroundColor (value, 0, 0);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
+  // Row 14.
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontForegroundColor (0, value, 0);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
+  // Row 15.
+  for (value = 0; value < 256; value += 4)
+  {
+    esq_FontForegroundColor (0, 0, value);
+    printf ("|");
+  }
+  esq_SingleFontEffect (esq_removeEffects);
+  printf ("\n");
 }
