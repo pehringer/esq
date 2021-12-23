@@ -1,2 +1,2 @@
 # esq
-Provides functions to make print common ANSI escape sequences to console
+Provides functions to print common ANSI escape sequences to console.
