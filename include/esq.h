@@ -9,6 +9,8 @@
 // Followed by optional ';' delimeted arguments.
 // Ends with command itself.
 
+// Font ----------------------------------------------------------------
+
 // Descriptors corresponding to ASNI escape codes.
 enum esq_FontEffect { esq_removeEffects     = 0,
                       esq_bold              = 1,
@@ -78,6 +80,8 @@ void esq_FontBackgroundColor (unsigned int red, unsigned int green, unsigned int
 void esq_FontColors (unsigned int foreRed, unsigned int foreGreen, unsigned int foreBlue,
                      unsigned int backRed, unsigned int backGreen, unsigned int backBlue);
 
+// Cursor ----------------------------------------------------------------
+
 // Moves cursor position up by given number of lines.
 // Format: \033[<LINES>A
 void esq_CursorUp (unsigned int lines);
@@ -105,5 +109,31 @@ void esq_CursorHome (void);
 // Sets cursor line and column position to given line and column.
 // Format: \033[<LINE>;<COLUMN>H
 void esq_CursorLineColumn (unsigned int line, unsigned int column);
+
+// Erase ----------------------------------------------------------------
+
+// Erase from cursor to end of screen.
+// Format: \033[0J
+void esq_EraseAllAfterCursor (void);
+
+// Erase from cursor to start of screen.
+// Format: \033[1J
+void esq_EraseAllBeforeCursor (void);
+
+// Erase screen.
+// Format: \033[2J
+void esq_EraseAll (void);
+
+// Erase from cursor to end of line.
+// Format: \033[0K
+void esq_EraseLineAfterCursor (void);
+
+// Erase from cursor to start  of line.
+// Format: \033[1K
+void esq_EraseLineBeforeCursor (void);
+
+// Erase line.
+// Format: \033[2K
+void esq_EraseLine (void);
 
 #endif

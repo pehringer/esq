@@ -67,3 +67,33 @@ void esq_CursorLineColumn (unsigned int line, unsigned int column)
 {
   printf ("\033[%d;%dH", line, column);
 }
+
+void esq_EraseAllAfterCursor (void)
+{
+  printf ("\033[0J");
+}
+
+void esq_EraseAllBeforeCursor (void)
+{
+  printf ("\033[1J");
+}
+
+void esq_EraseAll (void)
+{
+  printf ("\033[2J");
+}
+
+void esq_EraseLineAfterCursor (void)
+{
+  printf ("\033[0K");
+}
+
+void esq_EraseLineBeforeCursor (void)
+{
+  printf ("\033[1K");
+}
+
+void esq_EraseLine (void)
+{
+  printf ("\033[2K");
+}

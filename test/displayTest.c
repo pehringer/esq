@@ -1,5 +1,5 @@
 #include "esq.h"
-
+#include <unistd.h>
 int main (void)
 {
   // Row 0.
@@ -157,4 +157,62 @@ int main (void)
   }
   esq_SingleFontEffect (esq_removeEffects);
   printf ("\n");
+  // Row 16.
+  esq_SingleFontEffect (esq_blink);
+  printf("######## Cursor Postion Test Around ########\n\n\n\n\n");
+  esq_SingleFontEffect (esq_removeEffects);
+  // Row -1.
+  esq_CursorUp (22);
+  printf ("+");
+  for (value = 0; value < 63; value++)
+  {
+    printf ("-");
+    usleep(25000);
+    fflush(stdout);
+  }
+  printf ("+");
+  // Row -1 to 19.
+  for (value = 0; value < 19; value++)
+  {
+    esq_CursorLeft (1);
+    esq_CursorDown (1);
+    printf ("|");
+    usleep(50000);
+    fflush(stdout);
+  }
+  esq_CursorLeft (1);
+  esq_CursorDown (1);
+  printf ("+");
+  for (value = 0; value < 63; value++)
+  {
+    esq_CursorLeft (2);
+    printf ("-");
+    usleep (25000);
+    fflush (stdout);
+  }
+  esq_CursorLeft (2);
+  printf ("+");
+  esq_CursorColumn (0);
+  esq_CursorUp (2);
+  // Row 17.
+  esq_SingleFontEffect (esq_blink);
+  printf("######## Erase Test Below ########\n");
+  esq_SingleFontEffect (esq_removeEffects);
+
+  for (value = 0; value <= 50; value++)
+  {
+     int bars;
+     for (bars = 0; bars <= value; bars++)
+       printf ("/");
+     for (; bars <= 51; bars++)
+       printf (" ");
+     printf ("%d%%", value * 2);
+     fflush (stdout);
+     usleep (75000);
+     esq_EraseLineBeforeCursor ();
+     esq_CursorColumn (0);
+  }
+  printf ("Tests Complete");
+  esq_CursorDown (2);
+  esq_CursorColumn (0);
 }
